@@ -9,6 +9,7 @@ class customTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      textAlignVertical: TextAlignVertical.center,
       maxLines: maxlines,
       cursorColor: kprimaryColor,
       decoration: InputDecoration(
