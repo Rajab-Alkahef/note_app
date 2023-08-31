@@ -13,7 +13,6 @@ class AddNotesBottomSheet extends StatelessWidget {
     return BlocProvider(
       create: (context) => AddNoteCubit(),
       child: Container(
-        height: 400,
         child: BlocConsumer<AddNoteCubit, AddNoteState>(
           listener: (context, state) {
             if (state is AddNoteFailure) {
@@ -29,7 +28,10 @@ class AddNotesBottomSheet extends StatelessWidget {
               child: AbsorbPointer(
                 absorbing: state is AddNoteLoading ? true : false,
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16.0),
+                  padding: EdgeInsets.only(
+                      right: 16,
+                      left: 16,
+                      bottom: MediaQuery.of(context).viewInsets.bottom),
                   child: const SingleChildScrollView(
                     child: AddNoteForm(),
                   ),
