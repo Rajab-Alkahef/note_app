@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 import 'custom_seaech_widget.dart';
 
 class customAppBar extends StatelessWidget {
-  const customAppBar({super.key, required this.title, required this.icon});
+  const customAppBar(
+      {super.key, required this.title, required this.icon, this.onPressed});
 
+  final void Function()? onPressed;
   final String title;
   final IconData icon;
   @override
@@ -18,6 +20,7 @@ class customAppBar extends StatelessWidget {
         ),
         Spacer(),
         CustomSearchIcon(
+          onPressed: onPressed,
           icon: icon,
         ),
       ],
