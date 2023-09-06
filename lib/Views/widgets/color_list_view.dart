@@ -1,10 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes_app/constants.dart';
 import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
 
-class colorItem extends StatelessWidget {
-  const colorItem({super.key, required this.isActive, required this.color});
+class ColorItem extends StatelessWidget {
+  const ColorItem({super.key, required this.isActive, required this.color});
 
   final Color color;
   final bool isActive;
@@ -26,40 +26,34 @@ class colorItem extends StatelessWidget {
   }
 }
 
-class colorListView extends StatefulWidget {
-  const colorListView({super.key});
+class ColorListView extends StatefulWidget {
+  const ColorListView({super.key});
 
   @override
-  State<colorListView> createState() => _colorListViewState();
+  State<ColorListView> createState() => _ColorListViewState();
 }
 
-class _colorListViewState extends State<colorListView> {
+class _ColorListViewState extends State<ColorListView> {
   int currentIndex = 0;
-  List<Color> color = const [
-    Color(0xff2296f3),
-    Color(0xffA882DD),
-    Color(0xffE08D79),
-    Color(0xffB3F2DD),
-    Color(0xffE0EFDE),
-  ];
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 38 * 2,
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
-          itemCount: color.length,
+          itemCount: kcolor.length,
           itemBuilder: ((context, index) {
             return Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: GestureDetector(
                 onTap: () {
                   currentIndex = index;
-                  BlocProvider.of<AddNoteCubit>(context).color = color[index];
+                  BlocProvider.of<AddNoteCubit>(context).color = kcolor[index];
                   setState(() {});
                 },
-                child: colorItem(
-                  color: color[index],
+                child: ColorItem(
+                  color: kcolor[index],
                   isActive: currentIndex == index,
                 ),
               ),

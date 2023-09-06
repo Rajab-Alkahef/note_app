@@ -32,7 +32,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
           const SizedBox(
             height: 32,
           ),
-          customTextField(
+          CustomTextField(
               onSaved: (value) {
                 title = value;
               },
@@ -40,7 +40,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
           const SizedBox(
             height: 16,
           ),
-          customTextField(
+          CustomTextField(
             onSaved: (value) {
               subtitle = value;
             },
@@ -50,7 +50,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
           const SizedBox(
             height: 32,
           ),
-          colorListView(),
+          const ColorListView(),
           const SizedBox(
             height: 32,
           ),

@@ -1,8 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/Views/widgets/custom_app_bar.dart';
 import 'package:notes_app/Views/widgets/custom_text_field.dart';
+import 'package:notes_app/Views/widgets/edit_note_color_list_view.dart';
 import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/model/note_model.dart';
 
@@ -26,7 +26,7 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
           const SizedBox(
             height: 50,
           ),
-          customAppBar(
+          CustomAppBar(
             onPressed: () {
               widget.note.title = title ?? widget.note.title;
               widget.note.subtitle = subtitle ?? widget.note.subtitle;
@@ -40,7 +40,7 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
           const SizedBox(
             height: 30,
           ),
-          customTextField(
+          CustomTextField(
               onChanged: (value) {
                 title = value;
               },
@@ -48,12 +48,18 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
           const SizedBox(
             height: 16,
           ),
-          customTextField(
+          CustomTextField(
             onChanged: (value) {
               subtitle = value;
             },
             hint: widget.note.subtitle,
             maxlines: 5,
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          EditNoteColorsList(
+            note: widget.note,
           ),
         ],
       ),

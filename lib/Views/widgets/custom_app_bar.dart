@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'custom_seaech_widget.dart';
 
-class customAppBar extends StatelessWidget {
-  const customAppBar(
+class CustomAppBar extends StatelessWidget {
+  const CustomAppBar(
       {super.key, required this.title, required this.icon, this.onPressed});
 
   final void Function()? onPressed;
@@ -18,7 +18,7 @@ class customAppBar extends StatelessWidget {
           title,
           style: const TextStyle(fontSize: 28),
         ),
-        Spacer(),
+        const Spacer(),
         CustomSearchIcon(
           onPressed: onPressed,
           icon: icon,

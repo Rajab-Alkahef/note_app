@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
@@ -20,15 +19,16 @@ class _NotesViewBodyState extends State<NotesViewBody> {
     super.initState();
   }
 
+  @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24),
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 24),
       child: Column(
-        children: const [
+        children: [
           SizedBox(
             height: 50,
           ),
-          customAppBar(
+          CustomAppBar(
             title: "Notes",
             icon: Icons.search,
           ),

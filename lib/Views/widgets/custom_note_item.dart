@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/Views/edit_note_view.dart';
@@ -55,7 +54,7 @@ class NotesItem extends StatelessWidget {
 
                   BlocProvider.of<NotesCubit>(context).fetchAllNotes();
                 },
-                icon: Icon(
+                icon: const Icon(
                   Icons.delete,
                   color: Colors.black,
                   size: 30,

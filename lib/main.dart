@@ -9,7 +9,7 @@ import 'package:notes_app/simple_bloc_observer.dart';
 
 void main() async {
   await Hive.initFlutter();
-  Bloc.observer = simpleBlocObserver();
+  Bloc.observer = SimpleBlocObserver();
   Hive.registerAdapter(NoteModelAdapter());
   await Hive.openBox<NoteModel>(kNotesBox);
 
@@ -29,7 +29,7 @@ class NoteApp extends StatelessWidget {
           brightness: Brightness.dark,
           fontFamily: 'Poppins',
         ),
-        home: notesView(),
+        home: const NotesView(),
       ),
     );
   }

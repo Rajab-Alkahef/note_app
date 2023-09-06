@@ -34,7 +34,7 @@ class _EditNoteColorsListState extends State<EditNoteColorsList> {
                   widget.note.color = kcolor[index].value;
                   setState(() {});
                 },
-                child: colorItem(
+                child: ColorItem(
                   color: kcolor[index],
                   isActive: currentIndex == index,
                 ),
