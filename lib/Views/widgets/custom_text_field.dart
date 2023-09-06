@@ -1,9 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:notes_app/constants.dart';
 
-class customTextField extends StatelessWidget {
-  const customTextField(
+class CustomTextField extends StatelessWidget {
+  const CustomTextField(
       {super.key,
       required this.hint,
       this.maxlines = 1,
@@ -30,7 +29,7 @@ class customTextField extends StatelessWidget {
       cursorColor: kprimaryColor,
       decoration: InputDecoration(
         hintText: hint,
-        hintStyle: TextStyle(
+        hintStyle: const TextStyle(
           color: kprimaryColor,
         ),
         border: builtBorder(),
