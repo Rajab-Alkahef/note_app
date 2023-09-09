@@ -17,6 +17,7 @@ class EditNoteViewBody extends StatefulWidget {
 
 class _EditNoteViewBodyState extends State<EditNoteViewBody> {
   String? title, subtitle;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -41,18 +42,20 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
             height: 30,
           ),
           CustomTextField(
+              initString: widget.note.title,
               onChanged: (value) {
                 title = value;
               },
-              hint: widget.note.title),
+              hint: "title"),
           const SizedBox(
             height: 16,
           ),
           CustomTextField(
+            initString: widget.note.subtitle,
             onChanged: (value) {
               subtitle = value;
             },
-            hint: widget.note.subtitle,
+            hint: "content",
             maxlines: 5,
           ),
           const SizedBox(
